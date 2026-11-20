@@ -1,0 +1,68 @@
+@import "tailwindcss";
+
+:root {
+  --cookora-cream: #fbf9f5;
+  --cookora-navy: #2b3f60;
+  --cookora-navy-soft: #385078;
+  --cookora-yellow: #ffe39b;
+  --cookora-yellow-soft: #fff2cc;
+  --cookora-blue-soft: #e3ecfc;
+  --cookora-ink: #263854;
+  --cookora-muted: #657289;
+  --cookora-border: #eae6df;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+    background-color: #e8eef9;
+    color: var(--cookora-ink);
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  body {
+    margin: 0;
+    background-color: #e8eef9;
+    color: var(--cookora-ink);
+    overflow-x: hidden;
+  }
+
+  button,
+  select,
+  input {
+    font-family: inherit;
+  }
+}
+
+.font-timer {
+  font-family: "Nunito", ui-sans-serif, system-ui, sans-serif;
+  font-variant-numeric: tabular-nums;
+}
+
+.pb-safe {
+  padding-bottom: max(0.35rem, env(safe-area-inset-bottom));
+}
+
+.mobile-scroll::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.mobile-scroll::-webkit-scrollbar-track {
+  background: transparent;
+}
+.mobile-scroll::-webkit-scrollbar-thumb {
+  background: rgba(38, 59, 91, 0.14);
+  border-radius: 9999px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

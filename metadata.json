@@ -1,0 +1,8 @@
+{
+  "name": "Cookora",
+  "description": "Cookora is a cozy mobile-first kitchen timer and everyday Filipino recipe companion app designed to make everyday cooking easier, smarter, and more organized.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

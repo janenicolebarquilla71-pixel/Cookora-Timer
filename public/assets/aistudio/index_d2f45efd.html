@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Cookora Timer | Cook • Timer • Enjoy</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <a class="brand" href="#home" aria-label="Cookora home">
+        <div class="brand-mark">👩🏻‍🍳</div>
+        <div class="brand-name">Cookora</div>
+        <div class="brand-tagline">Cook · Timer · Enjoy</div>
+      </a>
+
+      <nav class="nav-menu" aria-label="Main navigation">
+        <a class="nav-link active" href="#home" data-nav="home"><span>⌂</span> Home</a>
+        <a class="nav-link" href="#recipes" data-nav="recipes"><span>♨</span> Recipes</a>
+        <a class="nav-link" href="#history" data-nav="history"><span>◷</span> History</a>
+        <a class="nav-link" href="#about" data-nav="about"><span>ⓘ</span> About</a>
+      </nav>
+
+      <div class="sidebar-bottom">
+        <div class="pot-doodle">♨<br>🍲</div>
+        <p>Good Food,<br>Good Mood <span>♡</span></p>
+        <div class="scribble">﹏﹏﹏</div>
+      </div>
+    </aside>
+
+    <main class="main-content" id="home">
+      <header class="topbar">
+        <div class="mobile-brand">👩🏻‍🍳 <strong>Cookora</strong></div>
+        <div class="greeting"><span class="sun">☀️</span> Hello, Cook! <span>✿</span></div>
+      </header>
+
+      <section class="hero">
+        <div class="hero-doodle cloche" aria-hidden="true">🍽️</div>
+        <div class="hero-copy">
+          <p class="eyebrow">A little help in your kitchen</p>
+          <h1>What would you like to cook today?</h1>
+          <p>Not sure? Let us help you make something yummy!</p>
+          <button class="btn btn-primary surprise-btn" id="surpriseBtn"><span>🎲</span> Surprise Me!</button>
+        </div>
+        <div class="hero-chef" aria-hidden="true">👩🏻‍🍳</div>
+        <span class="hero-spark spark-one">✳</span>
+        <span class="hero-spark spark-two">♡</span>
+      </section>
+
+      <div class="dashboard-grid">
+        <div class="left-column">
+          <section class="panel timer-panel" id="timer">
+            <div class="section-heading"><span class="heading-icon">◷</span><h2>Kitchen Timer</h2></div>
+            <div class="timer-content">
+              <div class="clock-illustration" aria-hidden="true"><span>⏰</span><i>✦</i></div>
+              <div class="timer-controls">
+                <div class="digital-display" id="display">00:10:00</div>
+                <div class="quick-times" aria-label="Quick timer durations">
+                  <button class="time-chip" data-minutes="1">1 min</button>
+                  <button class="time-chip" data-minutes="5">5 min</button>
+                  <button class="time-chip selected" data-minutes="10">10 min</button>
+                </div>
+                <div class="or-divider"><span></span>or<span></span></div>
+                <div class="custom-time">
+                  <label class="time-unit"><span>Hours</span><select id="hours" aria-label="Hours"></select></label>
+                  <label class="time-unit"><span>Minutes</span><select id="minutes" aria-label="Minutes"></select></label>
+                  <label class="time-unit"><span>Seconds</span><select id="seconds" aria-label="Seconds"></select></label>
+                  <button class="btn btn-primary set-btn" id="setTimerBtn">▶ Set Timer</button>
+                </div>
+              </div>
+            </div>
+            <div class="timer-actions">
+              <button class="btn btn-primary" id="startBtn">Start ▶</button>
+              <button class="btn btn-soft" id="pauseBtn">Pause Ⅱ</button>
+              <button class="btn btn-muted" id="resetBtn">Reset ↻</button>
+              <button class="btn btn-soft" id="stopAlarmBtn" type="button" hidden>Stop Alarm ■</button>
+            </div>
+            <p class="timer-status" id="timerStatus" aria-live="polite">Your kitchen timer is ready!</p>
+          </section>
+
+          <section class="tip-card">
+            <div class="tip-icon">💡</div>
+            <div><h3>Cooking Tip!</h3><p>Let ingredients come to room temperature before cooking for more even results.</p></div>
+            <span class="tip-spark">✳</span>
+          </section>
+        </div>
+
+        <div class="right-column">
+          <section class="panel presets-panel">
+            <div class="section-heading"><span class="heading-icon star">★</span><h2>Quick Presets</h2></div>
+            <div class="preset-grid">
+              <button class="preset-card yellow" data-minutes="30"><span>🍗</span><strong>Chicken</strong><small>30 min</small></button>
+              <button class="preset-card pink" data-minutes="40"><span>🐷</span><strong>Pork</strong><small>40 min</small></button>
+              <button class="preset-card blue" data-minutes="20"><span>🐟</span><strong>Fish</strong><small>20 min</small></button>
+              <button class="preset-card green" data-minutes="15"><span>🥦</span><strong>Vegetables</strong><small>15 min</small></button>
+              <button class="preset-card purple" data-minutes="20"><span>🍚</span><strong>Rice</strong><small>20 min</small></button>
+              <button class="preset-card blue" data-minutes="7"><span>🥚</span><strong>Soft-Boiled Egg</strong><small>7 min</small></button>
+              <button class="preset-card yellow" data-minutes="11"><span>🥚</span><strong>Hard-Boiled Egg</strong><small>11 min</small></button>
+            </div>
+          </section>
+
+          <section class="panel recipes-panel" id="recipes">
+            <div class="section-heading recipe-heading"><span class="heading-icon">♨</span><h2>Recipe &amp; Meal Ideas</h2><a href="#recipes" class="see-all" id="seeAll">See All →</a></div>
+            <div class="filters" id="filters">
+              <button class="filter active" data-filter="All">All</button>
+              <button class="filter" data-filter="Chicken">Chicken</button>
+              <button class="filter" data-filter="Pork">Pork</button>
+              <button class="filter" data-filter="Vegetables">Vegetables</button>
+              <button class="filter" data-filter="Seafood">Seafood</button>
+            </div>
+            <div class="recipe-grid" id="recipeGrid">
+              <article class="recipe-card" data-category="Chicken">
+                <img src="images/Chicken Adobo.jfif" alt="Filipino chicken adobo">
+                <div class="recipe-info"><h3>Chicken Adobo</h3><p>◷ 45 mins · Chicken</p><button class="view-recipe" data-recipe="Chicken Adobo">View Recipe →</button></div>
+              </article>
+              <article class="recipe-card" data-category="Pork">
+                <img src="images/Pork Sinigang.jfif" alt="Pork sinigang soup">
+                <div class="recipe-info"><h3>Pork Sinigang</h3><p>◷ 60 mins · Pork</p><button class="view-recipe" data-recipe="Pork Sinigang">View Recipe →</button></div>
+              </article>
+              <article class="recipe-card" data-category="Vegetables">
+                <img src="images/Ginataang Sitaw At Kalabasa.jfif" alt="Ginataang sitaw at kalabasa">
+                <div class="recipe-info"><h3>Ginataang Sitaw at Kalabasa</h3><p>◷ 30 mins · Vegetables</p><button class="view-recipe" data-recipe="Ginataang Sitaw at Kalabasa">View Recipe →</button></div>
+              </article>
+              <article class="recipe-card" data-category="Vegetables">
+                <img src="images/Ginisang Petchay.jfif" alt="Ginisang pechay">
+                <div class="recipe-info"><h3>Ginisang Pechay</h3><p>◷ 15 mins · Vegetables</p><button class="view-recipe" data-recipe="Ginisang Pechay">View Recipe →</button></div>
+              </article>
+              <article class="recipe-card" data-category="Vegetables">
+                <img src="images/Ginisang Munggo.jfif" alt="Ginisang munggo">
+                <div class="recipe-info"><h3>Ginisang Munggo</h3><p>◷ 45 mins · Vegetables</p><button class="view-recipe" data-recipe="Ginisang Munggo">View Recipe →</button></div>
+              </article>
+              <article class="recipe-card" data-category="Vegetables">
+                <img src="images/Tortang Talong.jfif" alt="Tortang talong">
+                <div class="recipe-info"><h3>Tortang Talong</h3><p>◷ 25 mins · Vegetables</p><button class="view-recipe" data-recipe="Tortang Talong">View Recipe →</button></div>
+              </article>
+              <article class="recipe-card" data-category="Vegetables">
+                <img src="images/Ginisang Sayote.jfif" alt="Ginisang sayote">
+                <div class="recipe-info"><h3>Ginisang Sayote</h3><p>◷ 20 mins · Vegetables</p><button class="view-recipe" data-recipe="Ginisang Sayote">View Recipe →</button></div>
+              </article>
+              <article class="recipe-card" data-category="Seafood">
+                <img src="images/Fried Tilapia.jfif" alt="Fried tilapia">
+                <div class="recipe-info"><h3>Fried Tilapia</h3><p>◷ 25 mins · Seafood</p><button class="view-recipe" data-recipe="Fried Tilapia">View Recipe →</button></div>
+              </article>
+            </div>
+          </section>
+        </div>
+      </div>
+
+      <section class="panel history-panel" id="history">
+        <div class="section-heading"><span class="heading-icon">◷</span><h2>Recent Timer Activity</h2></div>
+        <p id="historyEmpty">Your completed timers will appear here.</p>
+        <ul id="historyList"></ul>
+      </section>
+
+      <footer id="about">
+        <div class="about-content">
+          <h2>About Cookora</h2>
+          <p>Cookora is a simple and user-friendly kitchen timer web app designed to make everyday cooking easier, smarter, and more organized. It helps users manage cooking time and discover practical meal ideas for everyday meals.</p>
+          <p class="about-credit"><strong>Designed &amp; Developed by</strong><br>Jane Nicole Barquilla</p>
+          <p class="about-tagline">Making everyday cooking a little easier. ♡</p>
+        </div>
+      </footer>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <div class="modal-backdrop" id="recipeModal" aria-hidden="true">
+    <div class="modal">
+      <button class="modal-close" id="closeModal" aria-label="Close">×</button>
+      <div class="modal-emoji">🥘</div>
+      <h2 id="modalTitle">Recipe idea</h2>
+      <p class="recipe-time" id="modalTime"></p>
+      <div class="recipe-details">
+        <div><h3>Ingredients</h3><ul id="modalIngredients"></ul></div>
+        <div><h3>Easy Steps</h3><ol id="modalSteps"></ol></div>
+      </div>
+      <button class="btn btn-primary" id="modalDone">Sounds yummy!</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
